@@ -11,7 +11,7 @@ namespace AsignacionSemana8.Models
         /// <summary>
         /// Identificador único de la mascota.
         /// </summary>
-        public int MascotaId { get; set; }
+        public int? MascotaId { get; set; }
 
         /// <summary>
         /// Nombre de la mascota.
@@ -21,7 +21,7 @@ namespace AsignacionSemana8.Models
         /// <summary>
         /// Fecha de nacimiento de la mascota.
         /// </summary>
-        public DateTime FechaNacimiento { get; set; }
+        public DateTime? FechaNacimiento { get; set; }
 
         /// <summary>
         /// Sexo de la mascota (Macho o Hembra).
@@ -31,7 +31,7 @@ namespace AsignacionSemana8.Models
         /// <summary>
         /// Peso actual de la mascota (en kilogramos).
         /// </summary>
-        public float Peso { get; set; }
+        public float? Peso { get; set; }
 
         /// <summary>
         /// Alergias conocidas de la mascota.
@@ -41,7 +41,7 @@ namespace AsignacionSemana8.Models
         /// <summary>
         /// Identificador del propietario asociado.
         /// </summary>
-        public int PropietarioId { get; set; }
+        public int? PropietarioId { get; set; }
 
         /// <summary>
         /// Usuario que registró la mascota.
@@ -51,7 +51,7 @@ namespace AsignacionSemana8.Models
         /// <summary>
         /// Fecha en que se agregó el registro.
         /// </summary>
-        public DateTime FechaAdicion { get; set; }
+        public DateTime? FechaAdicion { get; set; }
 
         /// <summary>
         /// Usuario que realizó la última modificación.
@@ -61,7 +61,7 @@ namespace AsignacionSemana8.Models
         /// <summary>
         /// Fecha de la última modificación del registro.
         /// </summary>
-        public DateTime FechaModificacion { get; set; }
+        public DateTime? FechaModificacion { get; set; }
 
         public Mascota()
         {

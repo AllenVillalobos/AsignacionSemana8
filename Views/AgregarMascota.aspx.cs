@@ -37,7 +37,7 @@ namespace AsignacionSemana8.Views
         public int EncontarIdPropietario(string identificacion)
         {
             Propietario propietario = PropietarioDAO.ObtenerPropietario(identificacion);
-            return propietario.PropietarioId;
+            return Convert.ToInt32(propietario.PropietarioId);
         }
         public void btnAgregarPropietario_Click(object sender, EventArgs e)
         {

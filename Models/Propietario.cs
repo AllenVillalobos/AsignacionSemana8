@@ -12,7 +12,7 @@ namespace AsignacionSemana8.Models
         /// <summary>
         /// Identificador único del propietario.
         /// </summary>
-        public int PropietarioId { get; set; }
+        public int? PropietarioId { get; set; }
 
         /// <summary>
         /// Número de identificación del propietario.
@@ -57,7 +57,7 @@ namespace AsignacionSemana8.Models
         /// <summary>
         /// Fecha en que se agregó el registro.
         /// </summary>
-        public DateTime FechaAdicion { get; set; }
+        public DateTime? FechaAdicion { get; set; }
 
         /// <summary>
         /// Usuario que realizó la última modificación.
@@ -67,6 +67,6 @@ namespace AsignacionSemana8.Models
         /// <summary>
         /// Fecha de la última modificación del registro.
         /// </summary>
-        public DateTime FechaModificacion { get; set; }
+        public DateTime? FechaModificacion { get; set; }
     }
 }

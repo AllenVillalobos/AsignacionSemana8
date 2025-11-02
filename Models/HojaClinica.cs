@@ -11,12 +11,12 @@ namespace AsignacionSemana8.Models
         /// <summary>
         /// Identificador único de la hoja clínica.
         /// </summary>
-        public int HojaClinicaId { get; set; }
+        public int? HojaClinicaId { get; set; }
 
         /// <summary>
         /// Fecha en que se realizó la atención médica.
         /// </summary>
-        public DateTime FechaAtencion { get; set; }
+        public DateTime? FechaAtencion { get; set; }
 
         /// <summary>
         /// Descripción de los síntomas reportados por el paciente.
@@ -36,7 +36,7 @@ namespace AsignacionSemana8.Models
         /// <summary>
         /// Identificador del paciente o mascota atendida.
         /// </summary>
-        public int MascotaId { get; set; }
+        public int? MascotaId { get; set; }
 
         /// <summary>
         /// Usuario que registró la hoja de atención.
@@ -46,7 +46,7 @@ namespace AsignacionSemana8.Models
         /// <summary>
         /// Fecha en que se agregó el registro.
         /// </summary>
-        public DateTime FechaAdicion { get; set; }
+        public DateTime? FechaAdicion { get; set; }
 
         /// <summary>
         /// Usuario que realizó la última modificación.
@@ -56,10 +56,6 @@ namespace AsignacionSemana8.Models
         /// <summary>
         /// Fecha en que se realizó la última modificación del registro.
         /// </summary>
-        public DateTime FechaModificacion { get; set; }
-
-        public HojaClinica()
-        {
-        }
+        public DateTime? FechaModificacion { get; set; }
     }
 }

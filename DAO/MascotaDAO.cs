@@ -111,17 +111,17 @@ namespace AsignacionSemana8.DAO
                                 Mascota mascota = new Mascota
                                 {
 
-                                    MascotaId = reader["MAS_ID"] == DBNull.Value ? 0 : Convert.ToInt32(reader["MAS_ID"]),
+                                    MascotaId = reader["MAS_ID"] as int?,
                                     Nombre = reader["MAS_NOMBRE"] == DBNull.Value ? "" : reader["MAS_NOMBRE"].ToString(),
-                                    FechaNacimiento = reader["MAS_FECHA_NACIMIENTO"] == DBNull.Value ? DateTime.MinValue : Convert.ToDateTime(reader["MAS_FECHA_NACIMIENTO"]),
+                                    FechaNacimiento = reader["MAS_FECHA_NACIMIENTO"] as DateTime?,
                                     Sexo = reader["MAS_SEXO"] == DBNull.Value ? "" : reader["MAS_SEXO"].ToString(),
-                                    Peso = reader["MAS_PESO"] == DBNull.Value ? 0 : Convert.ToSingle(reader["MAS_PESO"]),
+                                    Peso = reader["MAS_PESO"] as float?,
                                     Alergias = reader["MAS_ALERGIAS"] == DBNull.Value ? "" : reader["MAS_ALERGIAS"].ToString(),
-                                    PropietarioId = reader["MAS_PRO_ID"] == DBNull.Value ? 0 : Convert.ToInt32(reader["MAS_PRO_ID"]),
+                                    PropietarioId = reader["MAS_PRO_ID"] as int?,
                                     AdicionadoPor = reader["MAS_ADICIONADO_POR"] == DBNull.Value ? "" : reader["MAS_ADICIONADO_POR"].ToString(),
-                                    FechaAdicion = reader["MAS_FECHA_ADICION"] == DBNull.Value ? DateTime.MinValue : Convert.ToDateTime(reader["MAS_FECHA_ADICION"]),
+                                    FechaAdicion = reader["MAS_FECHA_ADICION"] as DateTime?,
                                     ModificadoPor = reader["MAS_MODIFICADO_POR"] == DBNull.Value ? "" : reader["MAS_MODIFICADO_POR"].ToString(),
-                                    FechaModificacion = reader["MAS_FECHA_MODIFICACION"] == DBNull.Value ? DateTime.MinValue : Convert.ToDateTime(reader["MAS_FECHA_MODIFICACION"])
+                                    FechaModificacion = reader["MAS_FECHA_MODIFICACION"] as DateTime?
                                 };
                                 mascotas.Add(mascota);
                             }
@@ -161,17 +161,17 @@ namespace AsignacionSemana8.DAO
                                 Mascota mascota = new Mascota
                                 {
 
-                                    MascotaId = reader["MAS_ID"] == DBNull.Value ? 0 : Convert.ToInt32(reader["MAS_ID"]),
+                                    MascotaId = reader["MAS_ID"] as int?,
                                     Nombre = reader["MAS_NOMBRE"] == DBNull.Value ? "" : reader["MAS_NOMBRE"].ToString(),
-                                    FechaNacimiento = reader["MAS_FECHA_NACIMIENTO"] == DBNull.Value ? DateTime.MinValue : Convert.ToDateTime(reader["MAS_FECHA_NACIMIENTO"]),
+                                    FechaNacimiento = reader["MAS_FECHA_NACIMIENTO"] as DateTime?,
                                     Sexo = reader["MAS_SEXO"] == DBNull.Value ? "" : reader["MAS_SEXO"].ToString(),
-                                    Peso = reader["MAS_PESO"] == DBNull.Value ? 0 : Convert.ToSingle(reader["MAS_PESO"]),
+                                    Peso = reader["MAS_PESO"] as float?,
                                     Alergias = reader["MAS_ALERGIAS"] == DBNull.Value ? "" : reader["MAS_ALERGIAS"].ToString(),
-                                    PropietarioId = reader["MAS_PRO_ID"] == DBNull.Value ? 0 : Convert.ToInt32(reader["MAS_PRO_ID"]),
+                                    PropietarioId = reader["MAS_PRO_ID"] as int?,
                                     AdicionadoPor = reader["MAS_ADICIONADO_POR"] == DBNull.Value ? "" : reader["MAS_ADICIONADO_POR"].ToString(),
-                                    FechaAdicion = reader["MAS_FECHA_ADICION"] == DBNull.Value ? DateTime.MinValue : Convert.ToDateTime(reader["MAS_FECHA_ADICION"]),
+                                    FechaAdicion = reader["MAS_FECHA_ADICION"] as DateTime?,
                                     ModificadoPor = reader["MAS_MODIFICADO_POR"] == DBNull.Value ? "" : reader["MAS_MODIFICADO_POR"].ToString(),
-                                    FechaModificacion = reader["MAS_FECHA_MODIFICACION"] == DBNull.Value ? DateTime.MinValue : Convert.ToDateTime(reader["MAS_FECHA_MODIFICACION"])
+                                    FechaModificacion = reader["MAS_FECHA_MODIFICACION"] as DateTime?
                                 };
                                 mascotas.Add(mascota);
                             }

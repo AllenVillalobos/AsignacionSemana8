@@ -32,18 +32,18 @@ namespace AsignacionSemana8.DAO
                             {
                                 Propietario propietario = new Propietario
                                 {
-                                    PropietarioId = reader["PRO_ID"] == DBNull.Value ? 0 : Convert.ToInt32(reader["PRO_ID"]),
+                                    PropietarioId = reader["PRO_ID"] as int?,
                                     Identificacion = reader["PRO_IDENTIFICACION"] == DBNull.Value ? "" : reader["PRO_IDENTIFICACION"].ToString(),
-                                    PrimerNombre = reader["PRO_PRIMER_NOMBRE"] == DBNull.Value ? "": reader["PRO_PRIMER_NOMBRE"].ToString(),
+                                    PrimerNombre = reader["PRO_PRIMER_NOMBRE"] == DBNull.Value ? "" : reader["PRO_PRIMER_NOMBRE"].ToString(),
                                     SegundoNombre = reader["PRO_SEGUNDO_NOMBRE"] == DBNull.Value ? "" : reader["PRO_SEGUNDO_NOMBRE"].ToString(),
                                     PrimerApellido = reader["PRO_PRIMER_APELLIDO"] == DBNull.Value ? "" : reader["PRO_PRIMER_APELLIDO"].ToString(),
                                     SegundoApellido = reader["PRO_SEGUNDO_APELLIDO"] == DBNull.Value ? "" : reader["PRO_SEGUNDO_APELLIDO"].ToString(),
                                     Telefono = reader["PRO_TELEFONO"] == DBNull.Value ? "" : reader["PRO_TELEFONO"].ToString(),
                                     Correo = reader["PRO_CORREO"] == DBNull.Value ? "" : reader["PRO_CORREO"].ToString(),
                                     AdicionadoPor = reader["PRO_ADICIONADO_POR"] == DBNull.Value ? "" : reader["PRO_ADICIONADO_POR"].ToString(),
-                                    FechaAdicion = reader["PRO_FECHA_ADICION"] == DBNull.Value ? DateTime.MinValue : Convert.ToDateTime(reader["PRO_FECHA_ADICION"]),
+                                    FechaAdicion = reader["PRO_FECHA_ADICION"] as DateTime ?,
                                     ModificadoPor = reader["PRO_MODIFICADO_POR"] == DBNull.Value ? "" : reader["PRO_MODIFICADO_POR"].ToString(),
-                                    FechaModificacion = reader["PRO_FECHA_MODIFICACION"] == DBNull.Value ? DateTime.MinValue : Convert.ToDateTime(reader["PRO_FECHA_MODIFICACION"])
+                                    FechaModificacion = reader["PRO_FECHA_MODIFICACION"] as DateTime?
                                 };
                                 propietarios.Add(propietario);
                             }

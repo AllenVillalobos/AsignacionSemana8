@@ -1,4 +1,5 @@
 ﻿using AsignacionSemana8.DAO;
+using AsignacionSemana8.Models;
 using System;
 using System.Collections.Generic;
 using System.Data;
@@ -21,8 +22,8 @@ namespace AsignacionSemana8.Views
         {
             try
             {
-                GridView gridView = usuarioDAO.Login(txtNombre.Text, txtContra.Text);
-                if (gridView.Rows.Count>0)
+                Usuario usuario = usuarioDAO.Login(txtNombre.Text, txtContra.Text);
+                if (usuario !=null)
                 {
                     Response.Redirect("HojaClinica.aspx");
                 }

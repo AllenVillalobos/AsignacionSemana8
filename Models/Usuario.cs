@@ -11,7 +11,7 @@ namespace AsignacionSemana8.Models
         /// <summary>
         /// Identificador único del usuario.
         /// </summary>
-        public int UsuarioId { get; set; }
+        public int? UsuarioId { get; set; }
 
         /// <summary>
         /// Nombre de usuario utilizado para el inicio de sesión.
@@ -36,7 +36,7 @@ namespace AsignacionSemana8.Models
         /// <summary>
         /// Fecha en que se agregó el registro.
         /// </summary>
-        public DateTime FechaAdicion { get; set; }
+        public DateTime? FechaAdicion { get; set; }
 
         /// <summary>
         /// Usuario que realizó la última modificación.
@@ -46,7 +46,7 @@ namespace AsignacionSemana8.Models
         /// <summary>
         /// Fecha de la última modificación del registro.
         /// </summary>
-        public DateTime FechaModificacion { get; set; }
+        public DateTime? FechaModificacion { get; set; }
 
     }
 }
