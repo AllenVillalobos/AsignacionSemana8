@@ -68,9 +68,5 @@ namespace AsignacionSemana8.Models
         /// Fecha de la última modificación del registro.
         /// </summary>
         public DateTime FechaModificacion { get; set; }
-
-        public Propietario()
-        {
-        }
     }
 }

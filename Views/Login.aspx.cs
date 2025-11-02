@@ -21,10 +21,10 @@ namespace AsignacionSemana8.Views
         {
             try
             {
-                DataTable dataTable = usuarioDAO.Login(txtNombre.Text, txtContra.Text);
-                if (dataTable.Rows.Count > 0)
+                GridView gridView = usuarioDAO.Login(txtNombre.Text, txtContra.Text);
+                if (gridView.Rows.Count>0)
                 {
-                    Response.Redirect("AgregarMascota.aspx");
+                    Response.Redirect("HojaClinica.aspx");
                 }
                 else
                 {

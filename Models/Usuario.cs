@@ -48,8 +48,5 @@ namespace AsignacionSemana8.Models
         /// </summary>
         public DateTime FechaModificacion { get; set; }
 
-        public Usuario()
-        {
-        }
     }
 }

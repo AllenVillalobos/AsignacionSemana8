@@ -40,14 +40,14 @@
                 -->
                 <asp:Button Text="Buscar Propietario" runat="server"
                      ID="btnBuscarPropietario"
-                    CssClass="btn-primary" />
+                    CssClass="btn-primary" OnClick="btnBuscarPropietario_Click"/>
 
                 <!--
                 /// Botón para redirigir a la sección de agregar un nuevo propietario
                 -->
                 <asp:Button Text="Agregar Propietario" runat="server"
                     ID="btnAgregarPropietario"
-                    CssClass="btn-primary" />
+                    CssClass="btn-primary" OnClick="btnAgregarPropietario_Click"/>
 
                 <!--
                 /// Muestra el primer nombre del propietario encontrado (solo lectura)
@@ -85,7 +85,7 @@
                     Placeholder="Nombre de la mascota" />
 
                 <label for="txtFechaNacimiento">Fecha de Nacimiento</label>
-                <asp:UpdatePanel runat="server" ID="UpdatePanel1">
+                <asp:UpdatePanel runat="server" ID="upFechaNacimiento">
                     <ContentTemplate>
                         <asp:Calendar runat="server" ID="cldFechaNacimiento"
                             CssClass="calendar-basico"></asp:Calendar>
@@ -97,16 +97,18 @@
                     Placeholder="Peso de la mascota" />
 
                 <label for="ddlSexo">Sexo</label>
-                <asp:DropDownList runat="server" ID="ddlSexo"></asp:DropDownList>
+                <asp:DropDownList runat="server" ID="ddlSexo">
+                    <asp:ListItem Text="Seleccione el sexo" Value="" />
+                    <asp:ListItem Text="Macho" Value="M" />
+                    <asp:ListItem Text="Hembra" Value="H" />
+                </asp:DropDownList>
 
                 <label for="txtAlergiasMascota">Alergias</label>
                 <asp:TextBox ID="txtAlergiasMascota" runat="server" CssClass="form-control"
                     TextMode="MultiLine" Rows="3" Placeholder="Alergias conocidas" />
 
-                <asp:Button ID="btnGuardarMascota" runat="server" Text="Guardar Mascota" CssClass="btn-primary"
-                    />
-                <asp:Button ID="btnLimpiar" runat="server" Text="Limpiar" CssClass="btn-primary"
-                     />
+                <asp:Button ID="btnGuardarMascota" runat="server" Text="Guardar Mascota" CssClass="btn-primary" OnClick="btnGuardarMascota_Click"/>
+                <asp:Button ID="btnLimpiar" runat="server" Text="Limpiar" CssClass="btn-primary" OnClick="btnbtnLimpiar_Click"/>
 
                 <!--
                 /// Muestra mensajes de éxito o error al usuario
