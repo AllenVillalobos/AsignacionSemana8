@@ -1,0 +1,143 @@
+﻿
+/* Login */
+body {
+    background: linear-gradient(135deg, #b2f0d0 0%, #e6fff5 100%);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.login-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+}
+
+.login-card {
+    background-color: #ffffff;
+    border-radius: 20px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    overflow: hidden;
+    max-width: 850px;
+    width: 100%;
+}
+
+.login-image {
+    background: url('../Images/veterianaria.jpg') center center/cover no-repeat;
+    min-height: 400px;
+}
+
+.login-form {
+    padding: 40px 50px;
+}
+
+.login-title {
+    font-size: 1.8rem;
+    color: #1e7b5e;
+    font-weight: 600;
+    text-align: center;
+    margin-bottom: 25px;
+}
+
+.form-label {
+    color: #1e7b5e;
+    font-weight: 500;
+}
+
+.btn-primary {
+    background-color: #1e7b5e;
+    border: none;
+    width: 100%;
+    border-radius: 8px;
+}
+
+    .btn-primary:hover {
+        background-color: #16644c;
+    }
+
+.error-msg {
+    color: red;
+    font-size: 0.9rem;
+    display: block;
+    margin-top: 10px;
+    text-align: center;
+}
+
+@media (max-width: 768px) {
+    .login-card {
+        flex-direction: column;
+    }
+
+    .login-image {
+        min-height: 200px;
+    }
+}
+
+/* Agregar mascota */
+body {
+    background: linear-gradient(135deg, #b2f0d0 0%, #e6fff5 100%);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: #1e7b5e;
+}
+
+.container-vet {
+    max-width: 1100px;
+    margin: 50px auto;
+    background-color: #fff;
+    border-radius: 20px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    padding: 40px 50px;
+}
+
+.page-title {
+    color: #1e7b5e;
+    font-weight: 600;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.form-label {
+    font-weight: 500;
+    color: #1e7b5e;
+}
+
+.btn-primary {
+    background-color: #1e7b5e;
+    border: none;
+    border-radius: 8px;
+    margin: 5px;
+}
+
+    .btn-primary:hover {
+        background-color: #16644c;
+    }
+
+.section-header {
+    font-size: 1.3rem;
+    color: #1e7b5e;
+    margin-top: 25px;
+    border-bottom: 2px solid #b2f0d0;
+    padding-bottom: 5px;
+}
+
+.calendar-basico {
+    border: 1px solid #b2f0d0;
+    border-radius: 10px;
+    margin-bottom: 15px;
+}
+
+.error-msg {
+    color: red;
+    text-align: center;
+    font-size: 0.95rem;
+}
+
+.readonly-box {
+    background-color: #f9f9f9;
+}
+
+.footer-info {
+    background-color: #e9fdf4;
+    border-radius: 12px;
+    padding: 20px;
+    margin-top: 30px;
+}

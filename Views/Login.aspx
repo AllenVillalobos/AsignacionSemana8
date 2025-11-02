@@ -1,48 +1,55 @@
 ﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Login.aspx.cs" Inherits="AsignacionSemana8.Views.Login" %>
-
 <!DOCTYPE html>
-
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
-    <title>Login</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Login - Veterinaria</title>
+
+    <!-- Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="Estilos.css" rel="stylesheet" type="text/css" />
+
 </head>
 <body>
     <form id="form1" runat="server">
-        <div class="">
-            <!-- Título del formulario de inicio de sesión -->
-            <asp:Label runat="server" CssClass="login-title">Inicio de Sección</asp:Label>
-            <br />
+        <div class="login-container">
+            <div class="login-card d-flex flex-md-row flex-column">
+                <!-- Imagen lateral -->
+                <div class="col-md-6 login-image">
+                    <!-- Puedes cambiar la imagen en ../Images/veterinaria.jpg -->
+                </div>
 
-            <!-- Etiqueta para el campo de nombre de usuario -->
-            <asp:Label runat="server" AssociatedControlID="txtNombre" CssClass="login-label"> Nombre De Usuario </asp:Label>
-            <br />
+                <!-- Formulario -->
+                <div class="col-md-6 login-form">
+                    <asp:Label runat="server" CssClass="login-title">Inicio de Sesión</asp:Label>
 
-            <!-- Campo para ingresar el nombre de usuario -->
-            <asp:TextBox runat="server" ID="txtNombre" CssClass="form-control" Placeholder="Usuario" />
-            <br />
-            <asp:RequiredFieldValidator runat="server" ID="rfvNombre"
-                ControlToValidate="txtNombre"
-                ErrorMessage="El nombre se debe de ingresar"></asp:RequiredFieldValidator>
+                    <div class="mb-3">
+                        <label for="txtNombre" class="form-label">Nombre de Usuario</label>
+                        <asp:TextBox runat="server" ID="txtNombre" CssClass="form-control" Placeholder="Ingrese su usuario" />
+                        <asp:RequiredFieldValidator runat="server" ID="rfvNombre"
+                            ControlToValidate="txtNombre"
+                            CssClass="text-danger small"
+                            ErrorMessage="Debe ingresar su usuario" />
+                    </div>
 
-            <!-- Etiqueta para el campo de contraseña -->
-            <asp:Label runat="server" AssociatedControlID="txtContra" CssClass="login-label"> Ingresa La Clave </asp:Label>
-            <br />
+                    <div class="mb-3">
+                        <label for="txtContra" class="form-label">Contraseña</label>
+                        <asp:TextBox runat="server" ID="txtContra" CssClass="form-control" TextMode="Password" Placeholder="••••••••" />
+                        <asp:RequiredFieldValidator runat="server" ID="rfvContra"
+                            ControlToValidate="txtContra"
+                            CssClass="text-danger small"
+                            ErrorMessage="Debe ingresar su contraseña" />
+                    </div>
 
-            <!-- Campo para ingresar la contraseña (oculta con asteriscos) -->
-            <asp:TextBox runat="server" ID="txtContra" CssClass="form-control" TextMode="Password" Placeholder="••••••••" />
-            <br />
-            <asp:RequiredFieldValidator runat="server" ID="rfvContra"
-                ControlToValidate="txtContra"
-                ErrorMessage="La contraseña se debe de ingresar"></asp:RequiredFieldValidator>
-            <!-- Botón para enviar los datos e intentar iniciar sesión -->
-            <asp:Button runat="server" ID="btnIngresar" Text="Ingresar" CssClass="btn-primary" OnClick="btnIngresar_Click" />
-            <br />
-            <!-- Etiqueta para mostrar mensajes de error o información -->
-            <asp:Label ID="lblMensaje" runat="server" CssClass="error-msg" />
+                    <asp:Button runat="server" ID="btnIngresar" Text="Ingresar" CssClass="btn btn-primary mb-3" OnClick="btnIngresar_Click" />
+
+                    <asp:Label ID="lblMensaje" runat="server" CssClass="error-msg" />
+                </div>
+            </div>
         </div>
     </form>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>

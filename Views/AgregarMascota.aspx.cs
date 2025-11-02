@@ -57,7 +57,7 @@ namespace AsignacionSemana8.Views
             mascota.FechaAdicion = DateTime.Now;
             mascotaDAO.InsertarMascota(mascota);
         }
-        public void btnbtnLimpiar_Click(object sender, EventArgs e)
+        public void btnLimpiar_Click(object sender, EventArgs e)
         {
             txtAlergiasMascota.Text = "";
             txtNombreMascota.Text = "";

@@ -93,6 +93,7 @@
     <Content Include="Global.asax" />
     <Content Include="Views\AgregarMascota.aspx" />
     <Content Include="Views\AgregarPropietario.aspx" />
+    <Content Include="Views\Estilos.css" />
     <Content Include="Views\HojaClinica.aspx" />
     <Content Include="Views\Login.aspx" />
     <Content Include="Web.config" />
