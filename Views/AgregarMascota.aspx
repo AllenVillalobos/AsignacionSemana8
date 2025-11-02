@@ -42,6 +42,11 @@
                 <div class="col-md-6 mb-3">
                     <label class="form-label" for="txtPropietarioIdentificacion">Identificación</label>
                     <asp:TextBox ID="txtPropietarioIdentificacion" runat="server" CssClass="form-control"></asp:TextBox>
+
+                    <asp:RequiredFieldValidator runat="server" ID="rfvIdentificacion"
+                        ControlToValidate="txtPropietarioIdentificacion"
+                        CssClass="text-danger small"
+                        ErrorMessage="Se debe de ingresar una Identificación" />
                 </div>
                 <div class="col-md-6 d-flex align-items-end mb-3">
                     <asp:Button Text="Buscar Propietario" runat="server" ID="btnBuscarPropietario" CssClass="btn btn-primary me-2" OnClick="btnBuscarPropietario_Click" />
@@ -68,10 +73,40 @@
                 <div class="col-md-6 mb-3">
                     <label class="form-label" for="txtCorreo">Correo Electrónico</label>
                     <asp:TextBox ID="txtCorreo" runat="server" CssClass="form-control"></asp:TextBox>
+
+                    <asp:RequiredFieldValidator runat="server" ID="rfvCorreo"
+                        ControlToValidate="txtCorreo"
+                        CssClass="text-danger small"
+                        ErrorMessage="Se debe de ingresar un correo" />
+
+                    <asp:RegularExpressionValidator
+                        runat="server"
+                        ID="revCorreo"
+                        ControlToValidate="txtCorreo"
+                        CssClass="text-danger small"
+                        ErrorMessage="El formato del correo no es válido"
+                        ValidationExpression="^[^@\s]+@[^@\s]+\.[^@\s]+$"
+                        Display="Dynamic" />
+
                 </div>
                 <div class="col-md-6 mb-3">
                     <label class="form-label" for="txtCelular">Teléfono Celular</label>
                     <asp:TextBox ID="txtCelular" runat="server" CssClass="form-control"></asp:TextBox>
+
+                    <asp:RequiredFieldValidator runat="server" ID="rfvCelular"
+                        ControlToValidate="txtCorreo"
+                        CssClass="text-danger small"
+                        ErrorMessage="Se debe un teléfono celular" />
+
+                    <asp:CompareValidator
+                        runat="server"
+                        ID="cvCelular"
+                        ControlToValidate="txtCelular"
+                        Operator="DataTypeCheck"
+                        Type="Integer"
+                        CssClass="text-danger small"
+                        ErrorMessage="Debe ingresar solo números"
+                        Display="Dynamic" />
                 </div>
             </div>
 
@@ -84,11 +119,32 @@
                 <div class="col-md-6 mb-3">
                     <label class="form-label" for="txtNombreMascota">Nombre Mascota</label>
                     <asp:TextBox ID="txtNombreMascota" runat="server" CssClass="form-control" Placeholder="Nombre de la mascota" />
+
+                    <asp:RequiredFieldValidator runat="server" ID="rfvNombreMascota"
+                        ControlToValidate="txtNombreMascota"
+                        CssClass="text-danger small"
+                        ErrorMessage="Se debe un ingresar un nombre para la mascota" />
                 </div>
 
                 <div class="col-md-6 mb-3">
                     <label class="form-label" for="txtPesoMascota">Peso (kg)</label>
                     <asp:TextBox ID="txtPesoMascota" runat="server" CssClass="form-control" Placeholder="Peso de la mascota" />
+
+                    <asp:RequiredFieldValidator runat="server" ID="rfvPesoMascota"
+                        ControlToValidate="txtPesoMascota"
+                        CssClass="text-danger small"
+                        ErrorMessage="Se debe un peso para la mascota" />
+
+                    <asp:CompareValidator
+                        runat="server"
+                        ID="cvPesoMascota"
+                        ControlToValidate="txtPesoMascota"
+                        Operator="DataTypeCheck"
+                        Type="Double"
+                        CssClass="text-danger small"
+                        ErrorMessage="El peso debe ser un número válido (use punto decimal, por ejemplo: 5.3)."
+                        Display="Dynamic" />
+
                 </div>
             </div>
 
@@ -100,12 +156,26 @@
                         <asp:ListItem Text="Macho" Value="M" />
                         <asp:ListItem Text="Hembra" Value="H" />
                     </asp:DropDownList>
+                    <asp:RequiredFieldValidator
+                        runat="server"
+                        ID="rfvSexo"
+                        ControlToValidate="ddlSexo"
+                        InitialValue=""
+                        CssClass="text-danger small"
+                        ErrorMessage="Debe seleccionar el sexo de la mascota"
+                        Display="Dynamic" />
                 </div>
 
                 <div class="col-md-6 mb-3">
                     <label class="form-label" for="txtAlergiasMascota">Alergias</label>
                     <asp:TextBox ID="txtAlergiasMascota" runat="server" CssClass="form-control"
                         TextMode="MultiLine" Rows="3" Placeholder="Alergias conocidas" />
+
+                    <asp:RequiredFieldValidator runat="server" ID="rfvAlergias"
+                        ControlToValidate="txtPesoMascota"
+                        CssClass="text-danger small"
+                        ErrorMessage="Se debe rellenar este campo" />
+
                 </div>
             </div>
 

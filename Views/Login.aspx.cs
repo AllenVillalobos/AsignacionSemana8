@@ -25,6 +25,7 @@ namespace AsignacionSemana8.Views
                 Usuario usuario = usuarioDAO.Login(txtNombre.Text, txtContra.Text);
                 if (usuario !=null)
                 {
+                    Session["Usuario"] = usuario.NombreUsuario;
                     Response.Redirect("HojaClinica.aspx");
                 }
                 else
