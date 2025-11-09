@@ -72,7 +72,9 @@ body {
     }
 }
 
-/* Agregar mascota */
+/* 
+   AGREGAR MASCOTA Y PROPIETARIO
+ */
 body {
     background: linear-gradient(135deg, #b2f0d0 0%, #e6fff5 100%);
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -140,4 +142,19 @@ body {
     border-radius: 12px;
     padding: 20px;
     margin-top: 30px;
+}
+
+@media (max-width: 768px) {
+    .login-card {
+        flex-direction: column;
+    }
+
+    .login-image {
+        min-height: 200px;
+    }
+
+    .container-vet {
+        padding: 30px 20px;
+        margin: 20px;
+    }
 }
