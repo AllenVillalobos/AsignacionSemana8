@@ -11,7 +11,7 @@ namespace AsignacionSemana8.Views
 {
 
 
-    public partial class HojaClinica
+    public partial class HojaClinicaVista
     {
 
         /// <summary>

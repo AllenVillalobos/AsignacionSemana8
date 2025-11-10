@@ -1,11 +1,7 @@
 ﻿using AsignacionSemana8.DAO;
 using AsignacionSemana8.Models;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
 using System.Web.UI;
-using System.Web.UI.WebControls;
 
 namespace AsignacionSemana8.Views
 {
@@ -15,22 +11,27 @@ namespace AsignacionSemana8.Views
         {
             if (!IsPostBack)
             {
+                // Validación: si no hay usuario en sesión, redirige al Login
                 if (Session["Usuario"] == null)
                 {
                     Response.Redirect("Login.aspx");
                 }
                 else
                 {
+                    // Carga de auditoría
                     txtUsuario.Text = Session["Usuario"].ToString();
                     txtUsuarios.Text = Session["Usuario"].ToString();
                     txtFechaAdicion.Text = DateTime.Now.ToString("dd/MM/yyyy");
                 }
             }
         }
+
+        /// <summary>
+        /// Guarda o actualiza un propietario según exista en la base de datos.
+        /// </summary>
         public void btnGuardarDueño_Click(object sender, EventArgs e)
         {
-
-
+            // Validación general del formulario
             if (!Page.IsValid)
             {
                 lblMensaje.Text = "Debe completar todos los campos correctamente.";
@@ -39,6 +40,7 @@ namespace AsignacionSemana8.Views
 
             try
             {
+                // Creación de objeto propietario con datos del formulario
                 Propietario propietario = new Propietario
                 {
                     Identificacion = txtIdentificacion.Text.Trim(),
@@ -54,16 +56,18 @@ namespace AsignacionSemana8.Views
 
                 PropietarioDAO propietarioDAO = new PropietarioDAO();
 
-                // Verificamos si ya existe el propietario en la base de datos
+                // Consulta para verificar si el propietario ya existe
                 var existente = propietarioDAO.ObtenerPropietario(propietario.Identificacion);
 
                 if (existente == null)
                 {
+                    // Inserción si no existe
                     propietarioDAO.InsertarPropietario(propietario);
-                    lblMensaje.Text = " Propietario guardado correctamente.";
+                    lblMensaje.Text = "Propietario guardado correctamente.";
                 }
                 else
                 {
+                    // Actualización si existe
                     propietario.PropietarioId = existente.PropietarioId;
                     propietario.ModificadoPor = txtUsuarios.Text.Trim();
                     propietario.FechaModificacion = DateTime.Now;
@@ -76,12 +80,14 @@ namespace AsignacionSemana8.Views
             {
                 lblMensaje.Text = "Error al guardar el propietario: " + ex.Message;
             }
-       
         }
+
+        /// <summary>
+        /// Limpia todos los campos del formulario 
+        /// </summary>
         public void btnLimiar_Click(object sender, EventArgs e)
         {
-
-            // Limpiar campos del formulario principal
+            // Limpieza de campos generales
             txtIdentificacion.Text = string.Empty;
             txtNombreDueño1.Text = string.Empty;
             txtNombreDueño2.Text = string.Empty;
@@ -90,17 +96,14 @@ namespace AsignacionSemana8.Views
             txtTelefonoDueño.Text = string.Empty;
             txtEmailDueño.Text = string.Empty;
 
-            // Limpiar campos de auditoría
+            // Limpieza de información de auditoría
             txtUsuario.Text = string.Empty;
             txtFechaAdicion.Text = string.Empty;
             txtModificadoPor.Text = string.Empty;
             txtFechaModificacion.Text = string.Empty;
 
-            // Limpiar mensaje
+            // Limpieza de mensajes
             lblMensaje.Text = string.Empty;
-
-
         }
-
     }
 }

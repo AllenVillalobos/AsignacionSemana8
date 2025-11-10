@@ -94,12 +94,14 @@
     <Content Include="Views\AgregarMascota.aspx" />
     <Content Include="Views\AgregarPropietario.aspx" />
     <Content Include="Views\Estilos.css" />
-    <Content Include="Views\HojaClinica.aspx" />
+    <Content Include="Views\HojaClinicaVista.aspx" />
     <Content Include="Views\Login.aspx" />
+    <Content Include="Views\Recursos\Vete.png" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="DAO\HojaClinicaDAO.cs" />
     <Compile Include="DAO\MascotaDAO.cs" />
     <Compile Include="DAO\PropietarioDAO.cs" />
     <Compile Include="DAO\UsuarioDAO.cs" />
@@ -125,12 +127,12 @@
     <Compile Include="Views\AgregarPropietario.aspx.designer.cs">
       <DependentUpon>AgregarPropietario.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Views\HojaClinica.aspx.cs">
-      <DependentUpon>HojaClinica.aspx</DependentUpon>
+    <Compile Include="Views\HojaClinicaVista.aspx.cs">
+      <DependentUpon>HojaClinicaVista.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Views\HojaClinica.aspx.designer.cs">
-      <DependentUpon>HojaClinica.aspx</DependentUpon>
+    <Compile Include="Views\HojaClinicaVista.aspx.designer.cs">
+      <DependentUpon>HojaClinicaVista.aspx</DependentUpon>
     </Compile>
     <Compile Include="Views\Login.aspx.cs">
       <DependentUpon>Login.aspx</DependentUpon>

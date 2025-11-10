@@ -42,6 +42,15 @@ namespace AsignacionSemana8.Views
         protected global::System.Web.UI.WebControls.TextBox txtIdentificacion;
 
         /// <summary>
+        /// Control rfvIdentificacion.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator rfvIdentificacion;
+
+        /// <summary>
         /// Control txtNombreDueño1.
         /// </summary>
         /// <remarks>
@@ -49,6 +58,15 @@ namespace AsignacionSemana8.Views
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtNombreDueño1;
+
+        /// <summary>
+        /// Control rfvNombre1.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator rfvNombre1;
 
         /// <summary>
         /// Control txtNombreDueño2.
@@ -69,6 +87,15 @@ namespace AsignacionSemana8.Views
         protected global::System.Web.UI.WebControls.TextBox txtApellidoDueño1;
 
         /// <summary>
+        /// Control rvfApellido1.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator rvfApellido1;
+
+        /// <summary>
         /// Control txtApellidoDueño2.
         /// </summary>
         /// <remarks>
@@ -87,6 +114,24 @@ namespace AsignacionSemana8.Views
         protected global::System.Web.UI.WebControls.TextBox txtTelefonoDueño;
 
         /// <summary>
+        /// Control rfvCelular.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator rfvCelular;
+
+        /// <summary>
+        /// Control cvCelular.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.CompareValidator cvCelular;
+
+        /// <summary>
         /// Control txtEmailDueño.
         /// </summary>
         /// <remarks>
@@ -94,6 +139,24 @@ namespace AsignacionSemana8.Views
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtEmailDueño;
+
+        /// <summary>
+        /// Control rfvCorreo.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator rfvCorreo;
+
+        /// <summary>
+        /// Control revCorreo.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RegularExpressionValidator revCorreo;
 
         /// <summary>
         /// Control btnGuardarDueño.
