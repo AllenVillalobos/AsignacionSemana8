@@ -13,9 +13,6 @@ namespace AsignacionSemana8.Views
     {
         HojaClinicaDAO hojaClinicaDAO = new HojaClinicaDAO();
         MascotaDAO mascotaDAO = new MascotaDAO();
-
-        public int MascotaId { get; private set; }
-
         protected void Page_Load(object sender, EventArgs e)
         {
             if (!IsPostBack)
@@ -34,11 +31,17 @@ namespace AsignacionSemana8.Views
             }
         }
 
-
+        /// <summary>
+        /// Redirige a la página de agregar mascota.
+        /// </summary>
         public void bntAgregarMascota_Click(object sender, EventArgs e)
         {
             Response.Redirect("AgregarMascota.aspx");
         }
+
+        /// <summary>
+        /// Busca una mascota por su ID y carga sus datos en los controles.
+        /// </summary>
         public void btnBuscar_Click(object sender, EventArgs e)
         {
             try
@@ -62,6 +65,10 @@ namespace AsignacionSemana8.Views
                 txtMensaje.Text = "Error al buscar la mascota: " + ex.Message;
             }
         }
+
+        /// <summary>
+        /// Actualiza los datos de la mascota mostrada en la vista.
+        /// </summary>
         public void btnActualizar_Click(object sender, EventArgs e)
         {
             try
@@ -77,7 +84,9 @@ namespace AsignacionSemana8.Views
                     ModificadoPor = txtUsuario.Text,
                     FechaModificacion = DateTime.Now
                 };
+
                 int actualizado = mascotaDAO.ActualizarMascota(mascota);
+
                 if (actualizado != 0)
                 {
                     txtModificadoPor.Text = txtUsuario.Text;
@@ -94,6 +103,10 @@ namespace AsignacionSemana8.Views
                 txtMensaje.Text = "Error al actualizar la mascota.";
             }
         }
+
+        /// <summary>
+        /// Limpia los campos del formulario de hoja clínica.
+        /// </summary>
         public void btnLimpiar_Click(object sender, EventArgs e)
         {
             txtIDMascota.Text = "";
@@ -107,19 +120,27 @@ namespace AsignacionSemana8.Views
             txtTratamiento.Text = "";
             txtMensaje.Text = "";
         }
+
+        /// <summary>
+        /// Guarda una nueva atención médica (hoja clínica) asociada a una mascota.
+        /// </summary>
         public void btnGuardarHoja_Click(object sender, EventArgs e)
         {
             try
             {
-                HojaClinica hojaClinica = new HojaClinica();
-                hojaClinica.MascotaId = Convert.ToInt32(txtIDMascota.Text);
-                hojaClinica.FechaAtencion = DateTime.Parse(txtFecha.Text);
-                hojaClinica.Sintomas = txtSintomas.Text;
-                hojaClinica.Diagnostico = txtDiagnostico.Text;
-                hojaClinica.Tratamiento = txtTratamiento.Text;
-                hojaClinica.AdicionadoPor = txtUsuarios.Text;
-                hojaClinica.FechaAdicion = DateTime.Now;
+                HojaClinica hojaClinica = new HojaClinica
+                {
+                    MascotaId = Convert.ToInt32(txtIDMascota.Text),
+                    FechaAtencion = DateTime.Parse(txtFecha.Text),
+                    Sintomas = txtSintomas.Text,
+                    Diagnostico = txtDiagnostico.Text,
+                    Tratamiento = txtTratamiento.Text,
+                    AdicionadoPor = txtUsuarios.Text,
+                    FechaAdicion = DateTime.Now
+                };
+
                 int resultado = hojaClinicaDAO.CrearAtencion(hojaClinica);
+
                 if (resultado > 0)
                 {
                     txtMensaje.Text = "Hoja clínica guardada correctamente.";
