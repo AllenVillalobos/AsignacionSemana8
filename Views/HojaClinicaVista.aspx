@@ -4,7 +4,7 @@
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <title>Historial Clínico - Veterinaria</title>
 
     <!-- Bootstrap -->
@@ -48,9 +48,9 @@
             margin-right: 5px;
         }
 
-        .btn-primary:hover {
-            background-color: #16644c;
-        }
+            .btn-primary:hover {
+                background-color: #16644c;
+            }
 
         .readonly-box {
             background-color: #f9f9f9;
@@ -93,6 +93,8 @@
             <div class="gradient-card">
                 <label class="form-label">Identificador de Mascota</label>
                 <asp:TextBox ID="txtIDMascota" runat="server" CssClass="form-control mb-3" />
+                <asp:RequiredFieldValidator ID="rfvIDMascota" runat="server" ControlToValidate="txtIDMascota" ErrorMessage="El peso es obligatorio." CssClass="text-danger" Display="Dynamic" />
+                <br />
 
                 <div class="mb-3">
                     <asp:Button Text="Agregar" runat="server" ID="bntAgregarMascota"
@@ -105,6 +107,12 @@
                 <asp:TextBox ID="txtNombreMas" runat="server" CssClass="form-control mb-2 readonly-box" ReadOnly="true" />
                 <label class="form-label">Peso Mascota (kg)</label>
                 <asp:TextBox ID="txtPeso" runat="server" CssClass="form-control mb-2" />
+                <asp:RequiredFieldValidator ID="rfvPeso" runat="server" ControlToValidate="txtPeso" ErrorMessage="El peso es obligatorio." CssClass="text-danger" Display="Dynamic" />
+                <br />
+                <asp:CompareValidator runat="server" ID="cvPesoMascota" ControlToValidate="txtPeso" Operator="DataTypeCheck"
+                    Type="Double" CssClass="text-danger small" ErrorMessage="El peso debe ser un número válido (use punto decimal, por ejemplo: 5.3)." Display="Dynamic" />
+                <br />
+
                 <label class="form-label">Sexo</label>
                 <asp:TextBox ID="txtSexo" runat="server" CssClass="form-control mb-2 readonly-box" ReadOnly="true" />
                 <label class="form-label">Fecha de Nacimiento</label>
@@ -112,6 +120,9 @@
                 <label class="form-label">Alergias</label>
                 <asp:TextBox TextMode="MultiLine" Rows="3" runat="server"
                     ID="txtAlergias" CssClass="form-control mb-3" />
+                <asp:RequiredFieldValidator ID="rfvAlergias" runat="server" ControlToValidate="txtAlergias" ErrorMessage="Debe registrar las alergias o indicar 'Ninguna' o similares."
+                    CssClass="text-danger" Display="Dynamic" />
+                <br />
                 <asp:Button Text="Actualizar Datos" runat="server"
                     ID="btnActualizar" CssClass="btn btn-primary" OnClick="btnActualizar_Click" />
             </div>
@@ -121,12 +132,21 @@
                 <label class="form-label">Síntomas</label>
                 <asp:TextBox TextMode="MultiLine" Rows="3" runat="server"
                     ID="txtSintomas" CssClass="form-control mb-2" />
+                <asp:RequiredFieldValidator ID="rfvSintomas" runat="server" ControlToValidate="txtSintomas"
+                    ErrorMessage="Debe ingresar los síntomas." CssClass="text-danger" Display="Dynamic" />
+                <br />
                 <label class="form-label">Diagnóstico</label>
                 <asp:TextBox TextMode="MultiLine" Rows="3" runat="server"
                     ID="txtDiagnostico" CssClass="form-control mb-2" />
+                <asp:RequiredFieldValidator ID="rfvDiagnostico" runat="server" ControlToValidate="txtDiagnostico"
+                    ErrorMessage="Debe ingresar un diagnóstico." CssClass="text-danger" Display="Dynamic" />
+                <br />
                 <label class="form-label">Tratamiento</label>
                 <asp:TextBox TextMode="MultiLine" Rows="3" runat="server"
                     ID="txtTratamiento" CssClass="form-control mb-3" />
+                <asp:RequiredFieldValidator ID="rfvTratamiento" runat="server" ControlToValidate="txtTratamiento"
+                    ErrorMessage="Debe ingresar un tratamiento." CssClass="text-danger" Display="Dynamic" />
+                <br />
                 <asp:Button runat="server" Text="Limpiar Campos" ID="btnLimpiar"
                     CssClass="btn btn-secondary me-2" OnClick="btnLimpiar_Click" />
                 <asp:Button runat="server" Text="Guardar Hoja" ID="btnGuardarHoja"

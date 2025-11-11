@@ -51,6 +51,15 @@ namespace AsignacionSemana8.Views
         protected global::System.Web.UI.WebControls.TextBox txtIDMascota;
 
         /// <summary>
+        /// Control rfvIDMascota.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator rfvIDMascota;
+
+        /// <summary>
         /// Control bntAgregarMascota.
         /// </summary>
         /// <remarks>
@@ -87,6 +96,24 @@ namespace AsignacionSemana8.Views
         protected global::System.Web.UI.WebControls.TextBox txtPeso;
 
         /// <summary>
+        /// Control rfvPeso.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator rfvPeso;
+
+        /// <summary>
+        /// Control cvPesoMascota.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.CompareValidator cvPesoMascota;
+
+        /// <summary>
         /// Control txtSexo.
         /// </summary>
         /// <remarks>
@@ -114,6 +141,15 @@ namespace AsignacionSemana8.Views
         protected global::System.Web.UI.WebControls.TextBox txtAlergias;
 
         /// <summary>
+        /// Control rfvAlergias.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator rfvAlergias;
+
+        /// <summary>
         /// Control btnActualizar.
         /// </summary>
         /// <remarks>
@@ -132,6 +168,15 @@ namespace AsignacionSemana8.Views
         protected global::System.Web.UI.WebControls.TextBox txtSintomas;
 
         /// <summary>
+        /// Control rfvSintomas.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator rfvSintomas;
+
+        /// <summary>
         /// Control txtDiagnostico.
         /// </summary>
         /// <remarks>
@@ -141,6 +186,15 @@ namespace AsignacionSemana8.Views
         protected global::System.Web.UI.WebControls.TextBox txtDiagnostico;
 
         /// <summary>
+        /// Control rfvDiagnostico.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator rfvDiagnostico;
+
+        /// <summary>
         /// Control txtTratamiento.
         /// </summary>
         /// <remarks>
@@ -148,6 +202,15 @@ namespace AsignacionSemana8.Views
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtTratamiento;
+
+        /// <summary>
+        /// Control rfvTratamiento.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator rfvTratamiento;
 
         /// <summary>
         /// Control btnLimpiar.

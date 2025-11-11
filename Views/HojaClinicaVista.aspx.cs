@@ -44,6 +44,18 @@ namespace AsignacionSemana8.Views
         /// </summary>
         public void btnBuscar_Click(object sender, EventArgs e)
         {
+            rfvAlergias.Enabled = false;
+            rfvDiagnostico.Enabled = false;
+            rfvPeso.Enabled = false;
+            rfvTratamiento.Enabled = false;
+            rfvAlergias.Enabled = false;
+            cvPesoMascota.Enabled = false;
+            rfvSintomas.Enabled = false;
+            if (!Page.IsValid)
+            {
+                txtMensaje.Text = "Debe completar todos los campos correctamente.";
+                return;
+            }
             try
             {
                 var mascota = mascotaDAO.BuscarMascotaPorID(Convert.ToInt32(txtIDMascota.Text));
@@ -59,6 +71,13 @@ namespace AsignacionSemana8.Views
                 {
                     txtMensaje.Text = "Mascota no encontrada.";
                 }
+                rfvAlergias.Enabled = true;
+                rfvDiagnostico.Enabled = true;
+                rfvPeso.Enabled = true;
+                rfvTratamiento.Enabled = true;
+                rfvAlergias.Enabled = true;
+                cvPesoMascota.Enabled = true;
+                rfvSintomas.Enabled = true;
             }
             catch (Exception ex)
             {
@@ -71,6 +90,14 @@ namespace AsignacionSemana8.Views
         /// </summary>
         public void btnActualizar_Click(object sender, EventArgs e)
         {
+            rfvSintomas.Enabled = false;
+            rfvDiagnostico.Enabled = false;
+            rfvTratamiento.Enabled = false;
+            if (!Page.IsValid)
+            {
+                txtMensaje.Text = "Debe completar todos los campos correctamente.";
+                return;
+            }
             try
             {
                 Mascota mascota = new Mascota
@@ -97,6 +124,9 @@ namespace AsignacionSemana8.Views
                 {
                     txtMensaje.Text = "No se pudo actualizar la mascota.";
                 }
+                rfvDiagnostico.Enabled = true;
+                rfvSintomas.Enabled = true;
+                rfvTratamiento.Enabled = true;
             }
             catch
             {
@@ -126,6 +156,11 @@ namespace AsignacionSemana8.Views
         /// </summary>
         public void btnGuardarHoja_Click(object sender, EventArgs e)
         {
+            if (!Page.IsValid)
+            {
+                txtMensaje.Text = "Debe completar todos los campos correctamente.";
+                return;
+            }
             try
             {
                 HojaClinica hojaClinica = new HojaClinica
